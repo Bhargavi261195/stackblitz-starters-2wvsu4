@@ -1,0 +1,13 @@
+/* app.component.css */
+.example-container {
+  margin: 20px; /* Adjust the margin as needed */
+}
+
+.example-table {
+  width: 100%;
+}
+
+.example-header-cell,
+.example-cell {
+  padding: 10px; /* Adjust the padding as needed */
+}

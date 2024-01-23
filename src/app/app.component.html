@@ -1,0 +1,46 @@
+<h1>Dashboard App!</h1>
+<!-- <a target="_blank" href="https://angular.dev/overview">
+  Learn more about Angular
+</a> -->
+
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile>
+    <mat-grid-tile-header>Open Tickets {{ openCount }}</mat-grid-tile-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header
+      >Unassigned tickets {{ unassignedCount }}</mat-grid-tile-header
+    >
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header
+      >High Priority open {{ priorityCount }}</mat-grid-tile-header
+    >
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header>Open CR {{ openCRCount }}</mat-grid-tile-header>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div class="example-container">
+  <table class="example-table" cdk-table [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container cdkColumnDef="supportRep">
+      <th cdk-header-cell *cdkHeaderCellDef>Support Rep</th>
+      <td cdk-cell *cdkCellDef="let data" style="text-align: center;">
+        {{ data.supportRep }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="open">
+      <th cdk-header-cell *cdkHeaderCellDef>Open</th>
+      <td cdk-cell *cdkCellDef="let data" style="text-align: center;">
+        {{ data.open }}
+      </td>
+    </ng-container>
+
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
